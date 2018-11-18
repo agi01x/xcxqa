@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table renders JSX correctly 1`] = `
+<div
+  class="ant-table-wrapper"
+>
+  <div
+    class="ant-spin-nested-loading"
+  >
+    <div
+      class="ant-spin-container"
+    >
+      <div
+        class="ant-table ant-table-default ant-table-scroll-position-left"
+      >
+        <div
+          class="ant-table-content"
+        >
+          <div
+            class="ant-table-body"
+          >
+            <table
+              class=""
+            >
+              <colgroup>
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead
+                class="ant-table-thead"
+              >
+                <tr>
+                  <th
+                    class=""
+                    colspan="2"
+                  >
+                    <div>
+                      Name
+                    </div>
+                  </th>
+                  <th
+                    class=""
+                    rowspan="2"
+                  >
+                    <div>
+                      Age
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <th
+                    class=""
+                  >
+                    <div>
+                      First Name
+                    </div>
+                  </th>
+                  <th
+                    class=""
+                  >
+                    <div>
+                      Last Name
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                class="ant-table-tbody"
+              >
+                <tr
+                  class="ant-table-row ant-table-row-level-0"
+                  data-row-key="1"
+                >
+                  <td
+                    class=""
+                  >
+                    <span
+                      class="ant-table-row-indent indent-level-0"
+                      style="padding-left:0px"
+                    />
+                    John
+                  </td>
+                  <td
+                    class=""
+                  >
+                    Brown
+                  </td>
+                  <td
+                    class=""
+                  >
+                    32
+                  </td>
+                </tr>
+                <tr
+                  class="ant-table-row ant-table-row-level-0"
+                  data-row-key="2"
+                >
+                  <td
+                    class=""
+                  >
+                    <span
+                      class="ant-table-row-indent indent-level-0"
+                      style="padding-left:0px"
+                    />
+                    Jim
+                  </td>
+                  <td
+                    class=""
+                  >
+                    Green
+                  </td>
+                  <td
+                    class=""
+                  >
+                    42
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
