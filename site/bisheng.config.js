@@ -23,12 +23,7 @@ function alertBabelConfig(rules) {
 module.exports = {
   port: 8001,
   source: {
-    components: './components',
     docs: './docs',
-    changelog: [
-      'CHANGELOG.zh-CN.md',
-      'CHANGELOG.en-US.md',
-    ],
   },
   theme: './site/theme',
   htmlTemplate: './site/theme/static/template.html',

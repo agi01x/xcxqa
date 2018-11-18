@@ -66,11 +66,13 @@
       if (isLocalStorageNameSupported() && (pathname === '/' || pathname === '/index-cn')) {
         var lang = (window.localStorage && localStorage.getItem('locale')) || ((navigator.language || navigator.browserLanguage).toLowerCase() === 'zh-cn' ? 'zh-CN' : 'en-US');
         // safari is 'zh-cn', while other browser is 'zh-CN';
+        var lang ='zh-CN'
         if ((lang === 'zh-CN') !== isZhCN(pathname)) {
           location.pathname = getLocalizedPathname(pathname, lang === 'zh-CN');
         }
       }
-      document.documentElement.className += isZhCN(pathname) ? 'zh-cn' : 'en-us';
+      // document.documentElement.className += isZhCN(pathname) ? 'zh-cn' : 'en-us';
+      document.documentElement.className += 'zh-cn';
     })()
     </script>
   </head>
