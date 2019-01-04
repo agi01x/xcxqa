@@ -71,6 +71,9 @@ module.exports = {
         path: 'docs/base/:children',
         component: contentTmpl,
       }, {
+        path: 'docs/faq/:children',
+        component: contentTmpl,
+      }, {
         path: 'docs/api/:children',
         component: contentTmpl,
       }, {
