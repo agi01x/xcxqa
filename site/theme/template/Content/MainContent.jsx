@@ -20,7 +20,8 @@ function getModuleData(props) {
   const { pathname } = props.location;
   const moduleName = /^\/?components/.test(pathname)
     ? 'components' : pathname.split('/').filter(item => item).slice(0, 2).join('/');
-  const moduleData = moduleName === 'components' || moduleName === 'docs/react' || moduleName === 'docs/why'
+  const moduleData = moduleName === 'docs/react' || moduleName === 'docs/why'
+  // const moduleData = moduleName === 'components' || moduleName === 'docs/react' || moduleName === 'docs/why'
     || moduleName === 'changelog' || moduleName === 'changelog-cn'
     ? [...props.picked.components, ...props.picked['docs/react'], ...props.picked.changelog]
     : props.picked[moduleName];
