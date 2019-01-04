@@ -24,6 +24,7 @@ npm-debug.log
 nohup.out
 #_site
 _data
+_site
 dist
 /lib
 /es
