@@ -46,6 +46,7 @@ module.exports = {
     // },
     'docs/pattern': pickerGenerator('pattern'),
     'docs/base': pickerGenerator('base'),
+    'docs/faq': pickerGenerator('faq'),
     'docs/advanced': pickerGenerator('advanced'),
     'docs/awesome': pickerGenerator('awesome'),
     'docs/about': pickerGenerator('about'),

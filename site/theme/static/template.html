@@ -41,12 +41,14 @@
       function isZhCN(pathname) {
         return /-cn\/?$/.test(pathname);
       }
+
+      // 默认首页
       function getLocalizedPathname(path, zhCN) {
         var pathname = path.startsWith('/') ? path : '/' + path;
         if (!zhCN) { // to enUS
           return /\/?index-cn/.test(pathname) ? '/' : pathname.replace('-cn', '');
         } else if (pathname === '/') {
-          return '/docs/base/introduce-cn';
+          return '/docs/faq/introduce';
         } else if (pathname.endsWith('/')) {
           return pathname.replace(/\/$/, '-cn/');
         }
