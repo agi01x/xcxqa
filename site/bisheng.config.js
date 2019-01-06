@@ -1,6 +1,8 @@
 const path = require('path');
 const CSSSplitWebpackPlugin = require('css-split-webpack-plugin').default;
 const replaceLib = require('antd-tools/lib/replaceLib');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 const isDev = process.env.NODE_ENV === 'development';
 const usePreact = process.env.REACT_ENV === 'preact';
@@ -82,9 +84,9 @@ module.exports = {
   },
   webpackConfig(config) {
     config.resolve.alias = {
-      'antd/lib': path.join(process.cwd(), 'components'),
-      'antd/es': path.join(process.cwd(), 'components'),
-      antd: path.join(process.cwd(), 'index'),
+      // 'antd/lib': path.join(process.cwd(), 'components'),
+      // 'antd/es': path.join(process.cwd(), 'components'),
+      // antd: path.join(process.cwd(), 'index'),
       site: path.join(process.cwd(), 'site'),
       'react-router': 'react-router/umd/ReactRouter',
     };
@@ -110,6 +112,9 @@ module.exports = {
 
     config.plugins.push(
       new CSSSplitWebpackPlugin({ size: 4000 }),
+      new CopyWebpackPlugin([
+        { from: './site/CNAME', to: '.' },
+      ])
     );
 
     return config;
