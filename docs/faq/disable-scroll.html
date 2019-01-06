@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="小程序常见问题，小程序教程，社区。">
+    <title>小程序教程</title>
+    <link rel="icon" href="https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" type="text/css" href="/index-1.css"/> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/index-2.css"/> -->
+    <style id="nprogress-style">
+      #nprogress { display: none }
+    </style>
+    <link rel="stylesheet/less" type="text/css" href="/color.less"/>
+    <script src="https://gw.alipayobjects.com/os/lib/??es6-shim/0.35.3/es6-sham.min.js,es6-shim/0.35.3/es6-shim.min.js"></script>
+    <!--[if lte IE 10]>
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,media-match/2.0.2/media.match.min.js"></script>
+    <![endif]-->
+    <script>
+    if (!window.Intl) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/intl/1.0.1/??Intl.js,locale-data/jsonp/en.js,locale-data/jsonp/zh.js">' + '<' + '/script>');
+    }
+    </script>
+    <script>
+    (function() {
+      function isLocalStorageNameSupported() {
+        var testKey = 'test';
+        var storage = window.localStorage;
+        try {
+          storage.setItem(testKey, '1');
+          storage.removeItem(testKey);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+      // 优先级提高到所有静态资源的前面，语言不对，加载其他静态资源没意义
+      var pathname = location.pathname;
+
+      function isZhCN(pathname) {
+        return /-cn\/?$/.test(pathname);
+      }
+
+      // 默认首页
+      function getLocalizedPathname(path, zhCN) {
+        var pathname = path.startsWith('/') ? path : '/' + path;
+        if (!zhCN) { // to enUS
+          return /\/?index-cn/.test(pathname) ? '/' : pathname.replace('-cn', '');
+        } else if (pathname === '/') {
+          return '/docs/faq/introduce';
+        } else if (pathname.endsWith('/')) {
+          return pathname.replace(/\/$/, '-cn/');
+        }
+        return pathname + '-cn';
+      }
+
+      // 兼容旧的 URL， `?locale=...`
+      var queryString = location.search;
+      if (queryString) {
+        var isZhCNConfig = queryString.indexOf('zh-CN') > -1;
+        if (isZhCNConfig && !isZhCN(pathname)) {
+          location.pathname = getLocalizedPathname(pathname, isZhCNConfig)
+        }
+      }
+
+      // 首页无视链接里面的语言设置 https://github.com/ant-design/ant-design/issues/4552
+      if (isLocalStorageNameSupported() && (pathname === '/' || pathname === '/index-cn')) {
+        var lang = (window.localStorage && localStorage.getItem('locale')) || ((navigator.language || navigator.browserLanguage).toLowerCase() === 'zh-cn' ? 'zh-CN' : 'en-US');
+        // safari is 'zh-cn', while other browser is 'zh-CN';
+        var lang ='zh-CN'
+        if ((lang === 'zh-CN') !== isZhCN(pathname)) {
+          location.pathname = getLocalizedPathname(pathname, lang === 'zh-CN');
+        }
+      }
+      // document.documentElement.className += isZhCN(pathname) ? 'zh-cn' : 'en-us';
+      document.documentElement.className += 'zh-cn';
+    })()
+    </script>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?66f9104ef29b23dbefaf5c1479acae91";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+
+  <link href="/index.9ba052-1.css" rel="stylesheet"><link href="/index.9ba052-2.css" rel="stylesheet"></head>
+  <body>
+    <div id="react-content">
+      <div class="page-wrapper"><header id="header" class="clearfix"><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-5 ant-col-lg-5 ant-col-xl-5 ant-col-xxl-4"><a id="logo" href="/docs/base/introduce"><img alt="logo" src="http://md.shudong.wang/fun.png"/></a></div><div class="ant-col-xs-0 ant-col-sm-0 ant-col-md-19 ant-col-lg-19 ant-col-xl-19 ant-col-xxl-20"><div id="search-box"><i class="anticon anticon-search"><svg viewBox="64 64 896 896" class="" data-icon="search" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path></svg></i><input type="text" placeholder="在 小程序fun 中搜索" class="ant-input"/></div><ul class="ant-menu menu-site ant-menu-light ant-menu-root ant-menu-horizontal" id="nav" role="menu"><li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem"><div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li class="ant-menu-item ant-menu-item-selected" role="menuitem"><a href="/docs/faq/introduce"><span>常见问题</span></a></li><li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem"><div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li class="ant-menu-item" role="menuitem"><a href="/docs/about/introduce"><span>关于</span></a></li><li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="visibility:hidden;position:absolute" role="menuitem"><div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li></ul></div></div></header><div class="main-wrapper"><div class="ant-row"><div class="main-menu ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-6 ant-col-xl-5 ant-col-xxl-4"><ul class="ant-menu aside-container menu-site ant-menu-light ant-menu-root ant-menu-inline" role="menu"><li class="ant-menu-item" role="menuitem" style="padding-left:40px"><a href="/docs/faq/introduce">小程序常见问题目录</a></li><li class="ant-menu-item" role="menuitem" style="padding-left:40px"><a href="/docs/faq/image-best">微信小程序图片如何最佳处理？</a></li><li class="ant-menu-item" role="menuitem" style="padding-left:40px"><a href="/docs/faq/get-dom">微信小程序在js里面怎么获取dom？</a></li><li class="ant-menu-item ant-menu-item-selected" role="menuitem" style="padding-left:40px"><a href="/docs/faq/disable-scroll">微信小程序怎么让页面滚动和禁用滚动？</a></li></ul></div><div class="main-container ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-18 ant-col-xl-19 ant-col-xxl-20"><article class="markdown"><h1>微信小程序怎么让页面滚动和禁用滚动？</h1><section class="markdown"><h3 id="在页面页面里面的.json-文件增加配置-disableScroll"><span>在页面页面里面的.json 文件增加配置 disableScroll</span><a href="#在页面页面里面的.json-文件增加配置-disableScroll" class="anchor">#</a></h3><pre class="language-null"><code>默认 <span class="token boolean">false</span>，<span class="token boolean">true</span><span class="token punctuation">:</span> 禁用滚动
+```
+    <span class="token string">"disableScroll"</span><span class="token punctuation">:</span> <span class="token boolean">false</span>
+```</code></pre></section><section class="markdown api-container"></section></article></div></div><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-18 ant-col-lg-offset-6 ant-col-xl-19 ant-col-xl-offset-5 ant-col-xxl-20 ant-col-xxl-offset-4"><section class="prev-next-nav"><a class="prev-page" href="/docs/faq/get-dom"><i class="anticon anticon-left footer-nav-icon-before"><svg viewBox="64 64 896 896" class="" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg></i>微信小程序在js里面怎么获取dom？<i class="anticon anticon-right footer-nav-icon-after"><svg viewBox="64 64 896 896" class="" data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"></path></svg></i></a></section></div></div></div><footer id="footer"><div class="footer-wrap"><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>相关资源</span></h2></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>社区</span></h2></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>帮助</span></h2></div></div></div></div><div class="bottom-bar">Made with <span class="heart">❤</span> by<a target="_blank" rel="noopener noreferrer" href="https://shudong.wang"><span>SHUDONG</span></a></div></footer></div>
+    </div>
+    <script src="/common.js"></script>
+    <script src="/index.js"></script>
+  <script type="text/javascript" src="/runtime.8c3979.js"></script><script type="text/javascript" src="/common.f2f5cb.js"></script><script type="text/javascript" src="/index.085b9b.js"></script></body>
+</html>

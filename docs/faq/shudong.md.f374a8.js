@@ -1,1 +1,0 @@
-webpackJsonp(["docs/faq/shudong.md"],{"/UG7":function(o,n){o.exports={content:["article",["p","\u8fd9\u4e2a\u662fshudong\u9875\u9762"]],meta:{order:0,title:"shudong\u9875\u9762",filename:"docs/faq/shudong.md"},toc:["ul"]}}});
