@@ -132,7 +132,7 @@ export default class Header extends React.Component {
             <FormattedMessage id="app.header.menu.faq" />
           </Link>
         </Menu.Item>
-        <Menu.Item key="docs/base">
+        {/* <Menu.Item key="docs/base">
           <Link to={utils.getLocalizedPathname('/docs/base/introduce', isZhCN)}>
             <FormattedMessage id="app.header.menu.base" />
           </Link>
@@ -156,7 +156,7 @@ export default class Header extends React.Component {
           <Link to={utils.getLocalizedPathname('/docs/awesome/introduce', isZhCN)}>
             <FormattedMessage id="app.header.menu.awesome" />
           </Link>
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item key="docs/about">
           <Link to={utils.getLocalizedPathname('/docs/about/introduce', isZhCN)}>
             <FormattedMessage id="app.header.menu.about" />

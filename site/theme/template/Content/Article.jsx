@@ -78,7 +78,7 @@ export default class Article extends React.Component {
     const { intl: { locale } } = this.context;
     const isNotTranslated = locale === 'en-US' && typeof title === 'object';
     return (
-      <DocumentTitle title={`${title[locale] || title} - Ant Design`}>
+      <DocumentTitle title={`${title[locale] || title} - 小程序教程`}>
         { /* eslint-disable-next-line */ }
         <article className="markdown" onClick={this.onResourceClick}>
           {isNotTranslated && (
@@ -99,7 +99,7 @@ export default class Article extends React.Component {
                 ? null
                 : <span className="subtitle">{subtitle}</span>
             }
-            <EditButton title={<FormattedMessage id="app.content.edit-page" />} filename={filename} />
+            {/* <EditButton title={<FormattedMessage id="app.content.edit-page" />} filename={filename} /> */}
           </h1>
           {
             !description

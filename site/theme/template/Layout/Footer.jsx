@@ -109,7 +109,7 @@ class Footer extends React.Component {
                 <h2><FormattedMessage id="app.footer.help" /></h2>
               </div>
             </Col>
-            <Col md={6} sm={24} xs={24}>
+            {/* <Col md={6} sm={24} xs={24}>
               <div className="footer-center">
                 <h2>
                   <img className="title-icon" src="https://gw.alipayobjects.com/zos/rmsportal/nBVXkrFdWHxbZlmMbsaH.svg" alt="AFX Cloud" />
@@ -139,7 +139,7 @@ class Footer extends React.Component {
                   />
                 </div>
               </div>
-            </Col>
+            </Col> */}
           </Row>
         </div>
         <div className="bottom-bar">
