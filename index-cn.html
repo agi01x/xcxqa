@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An enterprise-class UI design language and React-based implementation with a set of high-quality React components, one of best React UI library for enterprises">
+    <title>Ant Design - A UI Design Language</title>
+    <link rel="icon" href="https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" type="text/css" href="/index-1.css"/> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/index-2.css"/> -->
+    <style id="nprogress-style">
+      #nprogress { display: none }
+    </style>
+    <link rel="stylesheet/less" type="text/css" href="/color.less"/>
+    <script src="https://gw.alipayobjects.com/os/lib/??es6-shim/0.35.3/es6-sham.min.js,es6-shim/0.35.3/es6-shim.min.js"></script>
+    <!--[if lte IE 10]>
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,media-match/2.0.2/media.match.min.js"></script>
+    <![endif]-->
+    <script>
+    if (!window.Intl) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/intl/1.0.1/??Intl.js,locale-data/jsonp/en.js,locale-data/jsonp/zh.js">' + '<' + '/script>');
+    }
+    </script>
+    <script>
+    (function() {
+      function isLocalStorageNameSupported() {
+        var testKey = 'test';
+        var storage = window.localStorage;
+        try {
+          storage.setItem(testKey, '1');
+          storage.removeItem(testKey);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+      // 优先级提高到所有静态资源的前面，语言不对，加载其他静态资源没意义
+      var pathname = location.pathname;
+
+      function isZhCN(pathname) {
+        return /-cn\/?$/.test(pathname);
+      }
+
+      // 默认首页
+      function getLocalizedPathname(path, zhCN) {
+        var pathname = path.startsWith('/') ? path : '/' + path;
+        if (!zhCN) { // to enUS
+          return /\/?index-cn/.test(pathname) ? '/' : pathname.replace('-cn', '');
+        } else if (pathname === '/') {
+          return '/docs/faq/introduce';
+        } else if (pathname.endsWith('/')) {
+          return pathname.replace(/\/$/, '-cn/');
+        }
+        return pathname + '-cn';
+      }
+
+      // 兼容旧的 URL， `?locale=...`
+      var queryString = location.search;
+      if (queryString) {
+        var isZhCNConfig = queryString.indexOf('zh-CN') > -1;
+        if (isZhCNConfig && !isZhCN(pathname)) {
+          location.pathname = getLocalizedPathname(pathname, isZhCNConfig)
+        }
+      }
+
+      // 首页无视链接里面的语言设置 https://github.com/ant-design/ant-design/issues/4552
+      if (isLocalStorageNameSupported() && (pathname === '/' || pathname === '/index-cn')) {
+        var lang = (window.localStorage && localStorage.getItem('locale')) || ((navigator.language || navigator.browserLanguage).toLowerCase() === 'zh-cn' ? 'zh-CN' : 'en-US');
+        // safari is 'zh-cn', while other browser is 'zh-CN';
+        var lang ='zh-CN'
+        if ((lang === 'zh-CN') !== isZhCN(pathname)) {
+          location.pathname = getLocalizedPathname(pathname, lang === 'zh-CN');
+        }
+      }
+      // document.documentElement.className += isZhCN(pathname) ? 'zh-cn' : 'en-us';
+      document.documentElement.className += 'zh-cn';
+    })()
+    </script>
+  <link href="/index.9eb604-1.css" rel="stylesheet"><link href="/index.9eb604-2.css" rel="stylesheet"></head>
+  <body>
+    <div id="react-content">
+      <div class="page-wrapper"><header id="header" class="clearfix"><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-5 ant-col-lg-5 ant-col-xl-5 ant-col-xxl-4"><a id="logo" href="/docs/base/introduce"><img alt="logo" src="http://md.shudong.wang/fun.png"/></a></div><div class="ant-col-xs-0 ant-col-sm-0 ant-col-md-19 ant-col-lg-19 ant-col-xl-19 ant-col-xxl-20"><div id="search-box"><i class="anticon anticon-search"><svg viewBox="64 64 896 896" class="" data-icon="search" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path></svg></i><input type="text" placeholder="在 小程序fun 中搜索" class="ant-input"/></div><ul class="ant-menu menu-site ant-menu-light ant-menu-root ant-menu-horizontal" id="nav" role="menu"><li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem"><div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li class="ant-menu-item" role="menuitem"><a href="/docs/faq/introduce"><span>常见问题</span></a></li><li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem"><div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li class="ant-menu-item" role="menuitem"><a href="/docs/base/introduce"><span>基础</span></a></li><li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem"><div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li class="ant-menu-item" role="menuitem"><a href="/docs/advanced/introduce"><span>进阶</span></a></li><li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem"><div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li class="ant-menu-item" role="menuitem"><a href="/docs/guide/introduce"><span>实战</span></a></li><li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem"><div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li class="ant-menu-item" role="menuitem"><a href="/docs/api/introduce"><span>接口详述</span></a></li><li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem"><div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li class="ant-menu-item" role="menuitem"><a href="/docs/awesome/introduce"><span>资源</span></a></li><li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="display:none" role="menuitem"><div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li><li class="ant-menu-item" role="menuitem"><a href="/docs/about/introduce"><span>关于</span></a></li><li class="ant-menu-submenu ant-menu-submenu-horizontal ant-menu-overflowed-submenu" style="visibility:hidden;position:absolute" role="menuitem"><div class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true"><span>···</span><i class="ant-menu-submenu-arrow"></i></div></li></ul></div></div></header><div id="page-404"><section><h1>404</h1><p>你要找的页面不存在<a href="/index-cn">返回首页</a></p></section><style>#react-content { height: 100%; background-color: #fff }</style></div><footer id="footer"><div class="footer-wrap"><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>相关资源</span></h2></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>社区</span></h2></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>帮助</span></h2></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><img class="title-icon" src="https://gw.alipayobjects.com/zos/rmsportal/nBVXkrFdWHxbZlmMbsaH.svg" alt="AFX Cloud"/><span>更多产品</span></h2><div style="margin-top:20px"><div><div style="padding:4px;background:#fff;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.1);display:inline-block;cursor:pointer"><div style="width:80px;height:16px;border-radius:2px;background:#1890ff"></div></div></div></div></div></div></div></div><div class="bottom-bar">Made with <span class="heart">❤</span> by<a target="_blank" rel="noopener noreferrer" href="https://shudong.wang"><span>SHUDONG</span></a></div></footer></div>
+    </div>
+    <script src="/common.js"></script>
+    <script src="/index.js"></script>
+  <script type="text/javascript" src="/runtime.337650.js"></script><script type="text/javascript" src="/common.e79cc7.js"></script><script type="text/javascript" src="/index.d0805f.js"></script></body>
+</html>
