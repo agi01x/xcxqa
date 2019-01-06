@@ -2,6 +2,9 @@
 order: 0
 title: 关于
 ---
+## 欢迎大家在Pr 或 issue
+地址： https://github.com/wsdo/xcxqa.git
+> 收录后，帮助更多的开发者
 
 ## 起因
 由于开发中，经常会遇到各种问题，以此记录下来，帮助更多开发者节省时间。
