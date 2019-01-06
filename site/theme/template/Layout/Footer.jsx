@@ -1,9 +1,9 @@
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Modal, message, Row, Col, Badge, Icon } from 'antd';
-import { Link } from 'bisheng/router';
+// import { Link } from 'bisheng/router';
 import { isLocalStorageNameSupported, loadScript, getLocalizedPathname } from '../utils';
-import ColorPicker from '../Color/ColorPicker';
+// import ColorPicker from '../Color/ColorPicker';
 
 class Footer extends React.Component {
   constructor(props) {
