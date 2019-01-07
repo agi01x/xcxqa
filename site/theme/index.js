@@ -46,6 +46,7 @@ module.exports = {
     // },
     'docs/pattern': pickerGenerator('pattern'),
     'docs/base': pickerGenerator('base'),
+    'docs/taro': pickerGenerator('taro'),
     'docs/faq': pickerGenerator('faq'),
     'docs/advanced': pickerGenerator('advanced'),
     'docs/awesome': pickerGenerator('awesome'),
@@ -74,6 +75,9 @@ module.exports = {
         path: 'docs/faq/:children',
         component: contentTmpl,
       }, {
+        path: 'docs/taro/:children',
+        component: contentTmpl,
+      }, {
         path: 'docs/api/:children',
         component: contentTmpl,
       }, {
@@ -88,7 +92,7 @@ module.exports = {
       }, {
         path: 'docs/about/:children',
         component: contentTmpl,
-      }
+      },
     ],
   },
 };

@@ -21,8 +21,9 @@ title: 小程序常见问题目录
 * 微信小程序写点击事件,并且在dom携带参数？
 * 微信小程序怎么设置dom显示隐藏？
 * 微信小程序怎么让页面滚动和禁用滚动？
-* [微信小程序图片如何最佳处理？](./docs/faq/image-best)
-* [微信小程序在js里面怎么获取dom？](./docs/faq/get-dom)
+* [微信小程序怎么自定义点击按钮弹出分享窗口？](https://www.xcxqa.com/docs/faq/custom-share)
+* [微信小程序图片如何最佳处理？](https://www.xcxqa.com/docs/faq/image-best)
+* [微信小程序在js里面怎么获取dom？](https://www.xcxqa.com/docs/faq/get-dom)
 
 
 ## 组件篇
