@@ -1,4 +1,7 @@
-<h1 align="center">微信小程序开发资源汇总</h1>
+---
+order: 10
+title: 微信小程序开发资源汇总
+---
 
 来自 [这里](https://github.com/justjavac/awesome-wechat-weapp/)
 ## 目录
