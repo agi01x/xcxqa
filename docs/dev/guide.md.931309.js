@@ -1,0 +1,1 @@
+webpackJsonp(["docs/dev/guide.md"],{"r23+":function(e,t){e.exports={content:["article",["h2","\u6dfb\u52a0\u76ee\u5f55"]],meta:{filename:"docs/dev/guide.md"},toc:["ul",["li",["a",{className:"bisheng-toc-h2",href:"#\u6dfb\u52a0\u76ee\u5f55",title:"\u6dfb\u52a0\u76ee\u5f55"},"\u6dfb\u52a0\u76ee\u5f55"]]]}}});
