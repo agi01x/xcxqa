@@ -48,6 +48,7 @@ module.exports = {
     'docs/base': pickerGenerator('base'),
     'docs/taro': pickerGenerator('taro'),
     'docs/faq': pickerGenerator('faq'),
+    'docs/pit': pickerGenerator('pit'),
     'docs/advanced': pickerGenerator('advanced'),
     'docs/awesome': pickerGenerator('awesome'),
     'docs/about': pickerGenerator('about'),
@@ -73,6 +74,9 @@ module.exports = {
         component: contentTmpl,
       }, {
         path: 'docs/faq/:children',
+        component: contentTmpl,
+      }, {
+        path: 'docs/pit/:children',
         component: contentTmpl,
       }, {
         path: 'docs/taro/:children',

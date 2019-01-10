@@ -7,6 +7,7 @@ module.exports = {
     'app.header.search': '全文本搜索...',
     'app.header.menu.home': '首页',
     'app.header.menu.faq': '常见问题',
+    'app.header.menu.pit': '常见坑',
     'app.header.menu.taro': 'taro常见问题',
     'app.header.menu.base': '基础',
     'app.header.menu.advanced': '进阶',
